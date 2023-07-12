@@ -1,5 +1,5 @@
 # Python Challenges
-
+import math
 
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
@@ -31,14 +31,26 @@
 # ---------------------------------
 
 
+def mid(str):
+    answer = str[int(len(str)/2)] if len(str)%2!=0 else ''
+    return answer
+print(mid('abc'))
+print(mid('aakoewifnoiaw'))
+
+
 # ### 3) Hide the credit card number
 # Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
-
+    
 
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
 
+def hide_cc_nums(num):
+    partly_hidden_num = '*'*len(num[:-4]) + num[-4:]
+    return partly_hidden_num
+
+print(hide_cc_nums('123456789012'))
 
 
 # ### 4) Online status
@@ -47,12 +59,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -65,6 +77,11 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
+def online_count(dict):
+   return list(dict.values()).count('online')
+
+# print(statuses.values())
+print(online_count(statuses))
 
 
 #  5) Give me the discount
@@ -75,17 +92,26 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
+def item(price:int, discount:int):
+    new_price = price - (price*(discount/100))
+    return new_price
+
+print(item(276, 20))
 
 #  6) Pythagorean Theorum
 
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
-
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
 
+def triangle(adj_leg:int, opp_leg:int):
+    hypotenuse = math.sqrt((adj_leg**2) + (opp_leg**2))
+    return hypotenuse
+
+print(triangle(20, 32))
 
 #  7) Fibonacci Sequence 
 # Everyone's favorite Math Problem!
@@ -98,3 +124,10 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+
+def function(num1:int, num2:int):
+    sequence = ((num1*0), (num1), (num1*1), (num1*2), (num1*3), (num1*5), (num1*8), (num1*13), (num1*21), (num1*34), (num1*55), (num1*89))
+    sequence2 = ((num2*0), (num2), (num2*1), (num2*2), (num2*3), (num2*5), (num2*8), (num2*13), (num2*21), (num2*34), (num2*55), (num2*89))
+    return sequence, sequence2
+
+print(function(2, 5))
