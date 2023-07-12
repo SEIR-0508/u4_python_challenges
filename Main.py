@@ -1,3 +1,5 @@
+import math
+
 # Python Challenges
 
 
@@ -6,19 +8,42 @@
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
 # -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
 # -  We're on the right track here, how many seconds are in a day
-# - How many Hours are in the month of June? 
+# - How many Hours are in the month of June?
 # - How many Minutes are in the month of August?
- 
- 
- # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
- # In days, in weeks, in cups of coffee?
+
+# Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year?
+# In days, in weeks, in cups of coffee?
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def convert_min_to_sec(min):
+    return min * 60
 
 
+def convert_hr_to_sec(hr):
+    return hr * 60 * 60
+
+
+def convert_day_to_hr(day):
+    return day * 24
+
+
+seconds_in_day = convert_hr_to_sec(24)
+print("seconds in day", seconds_in_day)
+
+hours_in_june = convert_day_to_hr(30)
+print("hours in june", hours_in_june)
+
+minutes_in_august = convert_day_to_hr(31) * 60
+print("minutes in august", minutes_in_august)
+
+minutes_in_year = convert_day_to_hr(365) * 60
+print("minutes in year", minutes_in_year)
+
+minutes_in_day = convert_day_to_hr(1) * 60
+print("minutes in day", minutes_in_day)
+
+minutes_in_week = convert_day_to_hr(7) * 60
+print("minutes in week", minutes_in_week)
 
 #  2) Middle letter
 
@@ -26,19 +51,32 @@
 # For example, mid("abc") should return "b" and mid("aaaa") should return "".
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def mid(str):
+    if len(str) % 2 == 0:
+        return ""
+    else:
+        return str[int(len(str) / 2 - 0.5)]
+
+
+print("mid of abc", mid("abc"))
+print("mid of aaaa", mid("aaaa"))
 
 
 # ### 3) Hide the credit card number
 # Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def hide_cc(num):
+    hidden = ""
+    for i in range(len(str(num))):
+        if i >= len(str(num)) - 4:
+            hidden += str(num)[i]
+        else:
+            hidden += "x"
+    return hidden
 
+
+print("hide cc", hide_cc(1234567894444))
 
 
 # ### 4) Online status
@@ -61,19 +99,27 @@
 # Your function should return the number of people who are online.
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def online_count(dict):
+    return list(dict.values()).count("online")
 
+
+print("online count", online_count({
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}))
 
 
 #  5) Give me the discount
 # Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def give_discount(fullprice, discount):
+    return int(fullprice * (1 - (discount / 100)))
+
+
+print("discount", give_discount(100, 20))
 
 
 #  6) Pythagorean Theorum
@@ -82,12 +128,15 @@
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def pythag(num1, num2):
+    squared = num1 ** 2 + num2 ** 2
+    return math.sqrt(squared)
 
 
-#  7) Fibonacci Sequence 
+print("pythag", pythag(3, 4))
+
+
+#  7) Fibonacci Sequence
 # Everyone's favorite Math Problem!
 
 # The Fibonacci numbers are the numbers in the following integer sequence.
@@ -95,6 +144,17 @@
 # In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation between two adjacent steps in a list
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def fibonacci(num1, num2):
+    output = []
+    for i in range(0, 10):
+        if i == 0:
+            output.append(num1 + num2)
+        elif i == 1:
+            output.append(num2 + output[i - 1])
+        else:
+            output.append(output[i-2] + output[i-1])
+
+    return output
+
+
+print("fibonacci", fibonacci(0, 1))
