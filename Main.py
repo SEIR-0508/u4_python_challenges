@@ -1,5 +1,5 @@
+import math
 # Python Challenges
-
 
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
@@ -16,6 +16,27 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def min_seconds(min): 
+    return min * 60
+
+def hour_seconds(hour): 
+    return hour * 60 * 60
+
+def day_hour(days): 
+    return days * 24
+
+def month_minutes(month): 
+    return month * 24 * 60
+
+def june(): 
+    return 30
+
+def august(): 
+    return 31
+
+print(hour_seconds(24))
+print(day_hour(june()))
+print(month_minutes(august()))
 # ---------------------------------
 
 
@@ -28,6 +49,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def mid(string):
+      length = len(string)
+      if length % 2 == 0: 
+            return ''
+      else: 
+            middle_letter = length // 2
+            return string[middle_letter] 
+
+print(mid('chris'))
 # ---------------------------------
 
 
@@ -37,9 +67,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hide_numbers(cc_number): 
+    hidden_numbers = "*" * (len(cc_number) -4)
+    last_four = cc_number[-4:]
+    show_hidden = hidden_numbers + last_four
+    return show_hidden
+
+print(hide_numbers('1234567890123456'))
+
 # ---------------------------------
-
-
 
 # ### 4) Online status
 # The aim of this challenge is, given a dictionary of people's online status, to count the number of people who are online.
@@ -47,12 +83,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -63,6 +99,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def online_count(statuses): 
+      online = 0
+      for status in statuses.values(): 
+            if status == "online": 
+                  online += 1
+      return online
+
+count = online_count(statuses)
+print(count)
 # ---------------------------------
 
 
@@ -73,6 +118,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def discount(price, dicount_percentage): 
+      discount_amount = price * (dicount_percentage / 100)
+      final_price = price - discount_amount
+      return final_price
+
+print(discount(100, 15))
 # ---------------------------------
 
 
@@ -84,6 +135,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hypotenouse_calculator(leg1, leg2): 
+     hypotenouse = math.sqrt((leg1 * leg1) + (leg2 * leg2))
+     return hypotenouse
+
+print(hypotenouse_calculator(3,4))
+
 # ---------------------------------
 
 
@@ -97,4 +154,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fibonacci(num1, num2): 
+      numbers = [num1, num2]
+      for _ in range(10): 
+            next = numbers[-1] + numbers[-2]
+            numbers.append(next)
+      return numbers
+
+numbers = fibonacci(0, 1)
+print(numbers)
 # ---------------------------------
