@@ -97,9 +97,10 @@ def hide_num(cc_num):
         hidden_num.append("*")
     for num in cc_num[-5:-1]:
         hidden_num.append(num)
-    print(hidden_num)
+    print(''.join(hidden_num))
 
 hide_num('1234567890')
+hide_num('984357868487687')
 
 
 # ---------------------------------
