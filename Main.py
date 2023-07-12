@@ -4,15 +4,44 @@
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
-# -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
-# -  We're on the right track here, how many seconds are in a day
-# - How many Hours are in the month of June? 
-# - How many Minutes are in the month of August?
- 
- 
- # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
- # In days, in weeks, in cups of coffee?
+def mins_to_secs(mins):
+    secs = mins * 60
+    print(f'{mins} minutes is {secs} seconds.')
+mins_to_secs(82)
+# mins_to_secs(1)
+# mins_to_secs(5)
 
+# - Then take it up a step further, converting Hours into seconds (1 -> 3600)
+def hours_to_secs(hours):
+    secs = hours * 60**2
+    print(f'{hours} hours is {secs} seconds.')
+hours_to_secs(7)
+# hours_to_secs(1)
+ 
+# - We're on the right track here, how many seconds are in a day
+def days_to_secs(days):
+    secs = days * 24 * (60**2)
+    print(f'{days} days is {secs} seconds.')
+days_to_secs(1)
+
+# - How many Hours are in the month of June? 
+def days_to_hours(days, month):
+    hours = days * 24
+    print(f'There are {hours} hours in {month}.')
+days_to_hours(30, 'June')
+
+# - How many Minutes are in the month of August?
+def days_to_minutes(days, month):
+    minutes = days * 24 * 60
+    print(f'There are {minutes} minutes in {month}.')
+days_to_minutes(31, 'August')
+
+# Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
+# In days, in weeks, in cups of coffee?
+def mins_to_years(years):
+    mins = years * 365 * 24 * 60
+    print(f'{years} years is {mins} minutes.')
+mins_to_years(1)
 
 # ---------------------------------
 #      Solution Goes Here ->
@@ -28,6 +57,16 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(string):
+    # find length of the string
+
+    # if length is even, return blank string
+
+    # if length is odd, find middle letter
+    # first half of string BEFORE middle letter needs to equal the second half of string AFTER the middle letter
+
+
 # ---------------------------------
 
 
