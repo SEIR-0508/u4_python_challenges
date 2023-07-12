@@ -17,8 +17,14 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
-
-
+def min_to_sec(min):
+    return min * 60
+def hr_to_sec(hr):
+    return min_to_sec(hr * 60)
+def day_to_sec(day):
+    return hr_to_sec(day * 24)
+def year_to_minutes(year):
+    return year * 365 * 24 * 60
 
 #  2) Middle letter
 
@@ -29,7 +35,13 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
-
+def mid(string):
+    if len(string) % 2:
+        return string[int((len(string)-1)/2)]
+    else:
+        return ''
+    
+print(mid('str'))
 
 # ### 3) Hide the credit card number
 # Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
@@ -38,7 +50,12 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+def hide(credit_card: str):
+    hidden = "*" * (len(credit_card) - 4)
+    hidden += credit_card[-4:]
+    return hidden
 
+print(hide('1234234545675678'))
 
 
 # ### 4) Online status
@@ -47,12 +64,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -64,8 +81,11 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+def online_count(statuses: dict):
+    state_list = list(statuses.values())
+    return state_list.count('online')
 
-
+print(online_count(statuses))
 
 #  5) Give me the discount
 # Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
@@ -74,6 +94,10 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+def discount(full_price, percentage):
+    return full_price * (1 - percentage / 100)
+
+print(discount(500,30))
 
 
 #  6) Pythagorean Theorum
@@ -85,6 +109,10 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+import math
+def hypo(leg1, leg2):
+    return math.sqrt(leg1 ** 2 + leg2 ** 2)
+print(hypo(3,4))
 
 
 #  7) Fibonacci Sequence 
@@ -98,3 +126,11 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+def fibonacci(num1, num2):
+    f = [0] * 9
+    f[0] = num1 + num2
+    f[1] = f[0] + num2
+    for i in range(2,9):
+        f[i] = f[i-1] + f[i-2]
+    return f
+print(fibonacci(3,4))
