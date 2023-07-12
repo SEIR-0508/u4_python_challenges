@@ -7,7 +7,7 @@
 def mins_to_secs(mins):
     secs = mins * 60
     print(f'{mins} minutes is {secs} seconds.')
-mins_to_secs(82)
+# mins_to_secs(82)
 # mins_to_secs(1)
 # mins_to_secs(5)
 
@@ -15,33 +15,33 @@ mins_to_secs(82)
 def hours_to_secs(hours):
     secs = hours * 60**2
     print(f'{hours} hours is {secs} seconds.')
-hours_to_secs(7)
+# hours_to_secs(7)
 # hours_to_secs(1)
  
 # - We're on the right track here, how many seconds are in a day
 def days_to_secs(days):
     secs = days * 24 * (60**2)
     print(f'{days} days is {secs} seconds.')
-days_to_secs(1)
+# days_to_secs(1)
 
 # - How many Hours are in the month of June? 
 def days_to_hours(days, month):
     hours = days * 24
     print(f'There are {hours} hours in {month}.')
-days_to_hours(30, 'June')
+# days_to_hours(30, 'June')
 
 # - How many Minutes are in the month of August?
 def days_to_minutes(days, month):
     minutes = days * 24 * 60
     print(f'There are {minutes} minutes in {month}.')
-days_to_minutes(31, 'August')
+# days_to_minutes(31, 'August')
 
 # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
 # In days, in weeks, in cups of coffee?
 def mins_to_years(years):
     mins = years * 365 * 24 * 60
     print(f'{years} years is {mins} minutes.')
-mins_to_years(1)
+# mins_to_years(1)
 
 # ---------------------------------
 #      Solution Goes Here ->
@@ -59,12 +59,25 @@ mins_to_years(1)
 #      Solution Goes Here ->
 
 def mid(string):
-    # find length of the string
+    # convert string to list
+    letters = list(string)
+    # find length of the list
+    length = len(letters)
+    print(f'The length of string "{string}" is {length}.')
+    if length % 2 == 0:
+        # if length is even, return blank string
+        print('""')
+    else:
+        # if length is odd, find middle letter
+        # length of string FIRST half needs to equal length of string SECOND half
+        # e.g. (5 - 1) / 2 >> 2 letters before and 2 letters after middle letter
+        num_of_others = int((length - 1) / 2)
+        print(string[-1 - num_of_others])
 
-    # if length is even, return blank string
-
-    # if length is odd, find middle letter
-    # first half of string BEFORE middle letter needs to equal the second half of string AFTER the middle letter
+# mid('hello')
+# mid('howdy')
+# mid('abcdefghij')
+# mid('abcdefghi')
 
 
 # ---------------------------------
@@ -76,6 +89,19 @@ def mid(string):
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+
+def hide_num(cc_num):
+    hidden_num = []
+    for num in cc_num[:-5]:
+        hidden_num.append("*")
+    for num in cc_num[-5:-1]:
+        hidden_num.append(num)
+    print(hidden_num)
+
+hide_num('1234567890')
+
+
 # ---------------------------------
 
 
