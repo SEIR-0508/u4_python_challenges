@@ -14,10 +14,20 @@
  # In days, in weeks, in cups of coffee?
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def minutes_to_seconds(minutes):
+    return (minutes * 60)
 
+def hours_to_seconds(hours):
+    return (hours * 3600)
+
+def days_to_seconds(days):
+    return days * (hours_to_seconds(24))
+
+def days_to_hours(days):
+    return days * 24
+
+def days_to_minutes(days):
+    return (days_to_hours(days) * 60)
 
 
 #  2) Middle letter
@@ -26,18 +36,24 @@
 # For example, mid("abc") should return "b" and mid("aaaa") should return "".
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def mid(string):
+    if (len(string) % 2) == 0:
+        return ""
+    elif (len(string) % 2) == 1:
+        return string[len(string)//2]
 
 
 # ### 3) Hide the credit card number
 # Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def credit_card_number(number):
+    str_number = str(number)
+    hidden = "*" * (len(str_number) - 4)
+    four = str_number[-4:]
+    return hidden + four
+
+
 
 
 
@@ -46,45 +62,50 @@
 
 # For example, consider the following dictionary:
 
-# ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
 
-# ```
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+
 
 # In this case, the number of people online is 2.
 # Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
 # Your function should return the number of people who are online.
 
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
 
+
+def online_count():
+    online = 0
+    for status in statuses.values():
+        if status == "online":
+            online += 1
+    print(online)
+online_count()
 
 
 #  5) Give me the discount
 # Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
-
+def apply_discount(price, discount):
+    percentage_discount = discount/100
+    return (price - (price * percentage_discount))
 
 #  6) Pythagorean Theorum
 
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
+import math
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def calc_hypotenuse(adjacent, opposite):
+    return (math.sqrt(adjacent**2 + opposite**2))
+
 
 
 #  7) Fibonacci Sequence 
@@ -95,6 +116,9 @@
 # In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation between two adjacent steps in a list
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
-# ---------------------------------
-#      Solution Goes Here ->
-# ---------------------------------
+def fibonacci(num1, num2):
+    result = [num1, num2]
+    for i in range(9):
+        new_num = result[-1] + result[-2]
+        result.append(new_num)
+    return result
