@@ -18,6 +18,33 @@ import math
 #      Solution Goes Here ->
 # ---------------------------------
 
+def sec_per_min(min):
+    return min * 60
+    
+def sec_per_hour(hours):
+    return hours*60*60
+
+def sec_per_day(days):
+    return days*24*60*60
+
+def hrs_in_june():
+    return 30*24
+
+def min_in_aug():
+    return 31 * 24 * 60
+
+def min_in_year(days_in_year):
+    return days_in_year * 24 * 60
+
+print(sec_per_min(1))
+print(sec_per_min(12))
+print(sec_per_hour(1))
+print(sec_per_hour(7))
+print(sec_per_day(1))
+print(hrs_in_june())
+print(min_in_aug())
+print(min_in_year(365))
+
 
 
 #  2) Middle letter
