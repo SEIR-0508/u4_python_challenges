@@ -85,6 +85,8 @@ def hideIt(CcNum):
     masked = '*' * hide + CcNum[-4:]
     return masked
 
+#This one was confusing and took a minute of figuring out how to make stuff the *
+
 
     
 
@@ -111,8 +113,18 @@ def hideIt(CcNum):
 # ```
 
 # In this case, the number of people online is 2.
-# Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
+# Write a function named online_count that takes one parameter. The parameter is 
+# a dictionary that maps from strings of names to the string "online" or "offline", 
+# as seen above.
 # Your function should return the number of people who are online.
+
+def online_count(nameDic)
+
+##I have no clue on this one
+
+
+
+
 
 
 # ---------------------------------
