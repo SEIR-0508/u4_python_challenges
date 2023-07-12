@@ -118,9 +118,14 @@ def hideIt(CcNum):
 # as seen above.
 # Your function should return the number of people who are online.
 
-def online_count(nameDic)
+def online_count(Status):
+    count = 0
+    for status in status.values():
+        if status == "online":
+            count += 1
+    return count
 
-##I have no clue on this one
+
 
 
 
@@ -134,8 +139,18 @@ def online_count(nameDic)
 
 
 #  5) Give me the discount
-# Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
-# The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
+# Create a function in Python that accepts two parameters. The first should be the full 
+# price of an item as an integer. The second should be the discount percentage as an integer.
+# The function should return the price of the item after the discount has been applied. 
+# For example, if the price is 100 and the discount is 20, the function should return 80.
+
+def whatDiscound(FullPrice, DiscPerc):
+    return FullPrice * (DiscPerc / 100)
+
+#This seemd too easy?
+
+
+
 
 # ---------------------------------
 #      Solution Goes Here ->
@@ -144,8 +159,19 @@ def online_count(nameDic)
 
 #  6) Pythagorean Theorum
 
-# As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
-# Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
+# As any High School sophomore will tell you, the sum of the squares of two legs 
+# of a right trangle will equal the square of the hypotenouse.
+# Create a function that takes two integers as the Adjacent and Opposite legs of 
+# a triangle, and returns an integer of the Hypotenouse
+
+
+def hyPot(leg1, leg2):
+    return ((leg1**2)+(leg2**2))
+
+#Again, seems to easy?
+
+
+
 
 
 # ---------------------------------
@@ -158,8 +184,23 @@ def online_count(nameDic)
 
 # The Fibonacci numbers are the numbers in the following integer sequence.
 # 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
-# In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation between two adjacent steps in a list
-# Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
+# In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the 
+# recurrence relation between two adjacent steps in a list
+# Create a python function that takes two numbers and finds the next Nine intervals 
+# using the Fibonacci Sequence
+
+
+def Fib(num1, num2):
+    fibList = [num1, num2]
+    while len(fibList) < 11:
+        next_num = fibList[-1] + fibList[-2]
+        fibList.append(next_num)
+
+    return fibList[2:]
+
+
+#I had knew how to do this one already!  It's like fizzbuzz.  Everywhere. 
+
 
 # ---------------------------------
 #      Solution Goes Here ->
