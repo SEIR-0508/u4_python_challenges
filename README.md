@@ -8,4 +8,4 @@ Perform all tasks by running the Main.py file in your terminal
 
 Find a cool picture of a snake and post it in here for bonus points
 
-![snake](https://www.cnn.com/2021/07/07/us/python-missing-louisiana-trnd/index.html)
+![snake](https://media.cnn.com/api/v1/images/stellar/prod/210707164757-louisiana-python-escape-file.jpg?q=x_2,y_808,h_898,w_1596,c_crop/w_800)
