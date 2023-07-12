@@ -14,16 +14,57 @@
  # In days, in weeks, in cups of coffee?
 
 
+def min_Sec(mins):
+    return mins * 60
+def hour_Sec(hours):
+    return hours * 3600
+def day_Sec():
+    return 1 * 24 * 3600
+def june_hours():
+    return 30 * 24
+def aug_Mins():
+   return 31 * 24 * 60 
+def main():
+    # Test the functions
+    minutes = 5
+    print(f"{minutes} minutes is equal to {min_Sec(minutes)} seconds.")
+
+    hours = 56732
+    print(f"{hours} hours is equal to {hour_Sec(hours)} seconds.")
+    print(f" {day_Sec()} seconds in a day.")
+    print(f" {june_hours()} hours in the month of June.")
+    print(f" {aug_Mins()} minutes in the month of August.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
 
 
 
+
+
 #  2) Middle letter
 
-# Write a function named mid that takes a string as its parameter. Your function should extract and return the middle letter. If there is no middle letter, your function should return the empty string.
+# Write a function named mid that takes a string as its parameter. Your function should 
+# extract and return the middle letter. If there is no middle letter, your function 
+# should return the empty string.
 # For example, mid("abc") should return "b" and mid("aaaa") should return "".
+
+
+def mid(Str):
+
+    length = len(Str)
+    if length % 2 == 0:
+        return Str[length //2]
+    else:
+        return("failboat")
+
 
 
 # ---------------------------------
@@ -32,7 +73,20 @@
 
 
 # ### 3) Hide the credit card number
-# Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
+# Write a function in Python that accepts a credit card number. 
+# It should return a string where all the characters are hidden 
+# with an asterisk except the last four. For example, if the function
+# gets sent "1234567894444", then it should return "*********4444".
+
+
+
+def hideIt(CcNum):
+    hide = len(CcNum)-4
+    masked = '*' * hide + CcNum[-4:]
+    return masked
+
+
+    
 
 
 # ---------------------------------
