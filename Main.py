@@ -183,12 +183,13 @@ def pythagoras(adj, opp):
 
 def fibonitch(num1, num2):
     counter = 0
-    interval = num1 + num2
-    while counter <= 9:
+    while counter < 9:
+        interval = num2 - num1
         next = num2 + interval
-        num2 = next
+        num2 += next
+        num1 = num2
         counter += 1
-        print(next)
-fibonitch(1,1)
+        print(num2)
+fibonitch(0,1)
 
 # ---------------------------------
