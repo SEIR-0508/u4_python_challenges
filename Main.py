@@ -180,4 +180,15 @@ def pythagoras(adj, opp):
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonitch(num1, num2):
+    counter = 0
+    interval = num1 + num2
+    while counter <= 9:
+        next = num2 + interval
+        num2 = next
+        counter += 1
+        print(next)
+fibonitch(1,1)
+
 # ---------------------------------
