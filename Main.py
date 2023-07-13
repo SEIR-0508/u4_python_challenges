@@ -43,8 +43,7 @@ def mins_to_years(years):
     print(f'{years} years is {mins} minutes.')
 # mins_to_years(1)
 
-# ---------------------------------
-#      Solution Goes Here ->
+
 # ---------------------------------
 
 
@@ -99,8 +98,8 @@ def hide_num(cc_num):
         hidden_num.append(num)
     print(''.join(hidden_num))
 
-hide_num('1234567890')
-hide_num('984357868487687')
+# hide_num('1234567890')
+# hide_num('984357868487687')
 
 
 # ---------------------------------
@@ -113,12 +112,12 @@ hide_num('984357868487687')
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -129,6 +128,10 @@ hide_num('984357868487687')
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def online_count(dict):
+#     return 
+
 # ---------------------------------
 
 
@@ -139,6 +142,14 @@ hide_num('984357868487687')
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discount(full_price, discount):
+    price = int(full_price)
+    deal = discount / 100
+    final_price = int(price - (price * deal))
+    print(final_price)
+# discount(100, 20)
+
 # ---------------------------------
 
 
@@ -150,6 +161,12 @@ hide_num('984357868487687')
 
 # ---------------------------------
 #      Solution Goes Here ->
+def pythagoras(adj, opp):
+    hypotenouse = int(((adj**2) + (opp**2)) * 0.5)
+    print(hypotenouse)
+# pythagoras(10, 10)
+# pythagoras(2, 2)
+
 # ---------------------------------
 
 
