@@ -92,11 +92,13 @@ def find_middle_letter(string):
 
 def credit_card_number(number):
     number_as_string = str(number)
-    asteric_string = '************'
+    if len(number_as_string) < 15 or len(number_as_string) > 16: #All credit cards will have 16 digits, except for American Express which uses 15.
+        return 'invalid credit card number.'
+    else:
+        asteric_string = '*' * (len(number_as_string) - 4)
+        return asteric_string + number_as_string[-4:]
 
-    return asteric_string + number_as_string[12:16]
-
-# print(credit_card_number(1234567894444123))
+print(credit_card_number(1234567894444123))
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -198,6 +200,6 @@ def fibonaccify(num1, num2):
     return fibonacci_list
 
 
-print(fibonaccify(0, 1))
+# print(fibonaccify(0, 1))
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
