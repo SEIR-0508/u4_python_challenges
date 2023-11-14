@@ -13,6 +13,9 @@
  # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
  # In days, in weeks, in cups of coffee?
 
+# Note -> You may need to put "import math" at the beginning of your code to do some of the math in this
+## Also note -> We aren't concerned with leap years here
+
 
 # ---------------------------------
 #      Solution Goes Here ->
