@@ -15,7 +15,33 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def minutes_to_seconds(minutes):
+    print (minutes * 60)
+
+minutes_to_seconds(1)
+
+
+def hours_to_seconds(hours):
+    return hours * 3600
+print(hours_to_seconds(1))
+
+seconds_in_day = 24 * hours_to_seconds(1)
+print(seconds_in_day)
+
+hours_in_june = 30 * 24
+print(hours_in_june)
+
+minutes_in_august = 31 * 24 * 60
+print(minutes_in_august)
+
+minutes_in_year = 365 * 24 * 60
+print(minutes_in_year)
+
+minutes_in_day = 24 * 60
+print(minutes_in_day)
+
+minutes_in_week = 7 * minutes_in_day
+print(minutes_in_week)
 # ---------------------------------
 
 
@@ -27,7 +53,14 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def mid(string):
+    length = len(string)
+    if length % 2 == 0:
+        return ""
+    else:
+        middle_index = int(length / 2)
+        return string[middle_index]
+print(mid("cat"))
 # ---------------------------------
 
 
@@ -36,7 +69,12 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def hide_credit_card(number):
+    hidden_num = "*" * (len(number) - 4) + number[-4:]
+    return hidden_num
+
+print(hide_credit_card('1234567894444'))
+
 # ---------------------------------
 
 
@@ -46,15 +84,15 @@
 
 # For example, consider the following dictionary:
 
-# ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
 
-# ```
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+
 
 # In this case, the number of people online is 2.
 # Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
@@ -62,7 +100,12 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def online_count(dictionary):
+    dictionary_values = [dictionary[key] for key in dictionary]
+    people_online = dictionary_values.count("online")
+    return(people_online)
+
+print(online_count(statuses))
 # ---------------------------------
 
 
@@ -72,7 +115,10 @@
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
 # ---------------------------------
-#      Solution Goes Here ->
+def calculate_discounted_price(price, discount_percentage):
+    discount = (discount_percentage / 100) * price
+    return round((price - discount),2)
+print(calculate_discounted_price(100, 25))
 # ---------------------------------
 
 
@@ -83,7 +129,10 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def no_o_hypotenuse(adjacent, opposite):
+    return int((adjacent**2 + opposite**2)**0.5)
+
+print(no_o_hypotenuse(5,5))
 # ---------------------------------
 
 
@@ -96,5 +145,11 @@
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
 # ---------------------------------
-#      Solution Goes Here ->
+def fibonacci_sequence(start1, start2, count):
+    sequence = [start1, start2]
+    for i in range(count):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence
+print(fibonacci_sequence(2,3, 9))
+
 # ---------------------------------
