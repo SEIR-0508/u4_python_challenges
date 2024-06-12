@@ -4,21 +4,49 @@
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
-# -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
-# -  We're on the right track here, how many seconds are in a day
+def mins_to_secs(mins):
+    secs = mins * 60
+    print(f'{mins} minutes is {secs} seconds.')
+# mins_to_secs(82)
+# mins_to_secs(1)
+# mins_to_secs(5)
+
+# - Then take it up a step further, converting Hours into seconds (1 -> 3600)
+def hours_to_secs(hours):
+    secs = hours * 60**2
+    print(f'{hours} hours is {secs} seconds.')
+# hours_to_secs(7)
+# hours_to_secs(1)
+ 
+# - We're on the right track here, how many seconds are in a day
+def days_to_secs(days):
+    secs = days * 24 * (60**2)
+    print(f'{days} days is {secs} seconds.')
+# days_to_secs(1)
+
 # - How many Hours are in the month of June? 
+def days_to_hours(days, month):
+    hours = days * 24
+    print(f'There are {hours} hours in {month}.')
+# days_to_hours(30, 'June')
+
 # - How many Minutes are in the month of August?
- 
- 
- # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
- # In days, in weeks, in cups of coffee?
+def days_to_minutes(days, month):
+    minutes = days * 24 * 60
+    print(f'There are {minutes} minutes in {month}.')
+# days_to_minutes(31, 'August')
+
+# Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
+# In days, in weeks, in cups of coffee?
+def mins_to_years(years):
+    mins = years * 365 * 24 * 60
+    print(f'{years} years is {mins} minutes.')
+# mins_to_years(1)
 
 # Note -> You may need to put "import math" at the beginning of your code to do some of the math in this
 ## Also note -> We aren't concerned with leap years here
 
 
-# ---------------------------------
-#      Solution Goes Here ->
 # ---------------------------------
 
 
@@ -31,6 +59,29 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(string):
+    # convert string to list
+    letters = list(string)
+    # find length of the list
+    length = len(letters)
+    print(f'The length of string "{string}" is {length}.')
+    if length % 2 == 0:
+        # if length is even, return blank string
+        print('""')
+    else:
+        # if length is odd, find middle letter
+        # length of string FIRST half needs to equal length of string SECOND half
+        # e.g. (5 - 1) / 2 >> 2 letters before and 2 letters after middle letter
+        num_of_others = int((length - 1) / 2)
+        print(string[-1 - num_of_others])
+
+# mid('hello')
+# mid('howdy')
+# mid('abcdefghij')
+# mid('abcdefghi')
+
+
 # ---------------------------------
 
 
@@ -40,6 +91,20 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+
+def hide_num(cc_num):
+    hidden_num = []
+    for num in cc_num[:-5]:
+        hidden_num.append("*")
+    for num in cc_num[-5:-1]:
+        hidden_num.append(num)
+    print(''.join(hidden_num))
+
+# hide_num('1234567890')
+# hide_num('984357868487687')
+
+
 # ---------------------------------
 
 
@@ -50,12 +115,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -66,6 +131,10 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def online_count(dict):
+#     return 
+
 # ---------------------------------
 
 
@@ -76,6 +145,14 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discount(full_price, discount):
+    price = int(full_price)
+    deal = discount / 100
+    final_price = int(price - (price * deal))
+    print(final_price)
+# discount(100, 20)
+
 # ---------------------------------
 
 
@@ -87,6 +164,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def pythagoras(adj, opp):
+    hypotenouse = int(((adj**2) + (opp**2)) * 0.5)
+    print(hypotenouse)
+# pythagoras(10, 10)
+# pythagoras(2, 2)
+
 # ---------------------------------
 
 
@@ -100,4 +183,23 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonitch(num1, num2):
+    counter = 0
+    interval = [num1, num2]
+    while counter < 9:
+        ### original attempt: ###
+        # interval = num2 - num1
+        # next = num2 + interval
+        # num2 += next
+        # num1 = num2
+        # counter += 1
+        # print(num2)
+        next = interval[-1] + interval[-2]
+        interval.append(next)
+        counter += 1
+    print(interval)
+fibonitch(0,1)
+fibonitch(4,7)
+
 # ---------------------------------
