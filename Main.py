@@ -1,14 +1,15 @@
 # Python Challenges
-
+import math
 
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
-# -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
-# -  We're on the right track here, how many seconds are in a day
-# - How many Hours are in the month of June? 
-# - How many Minutes are in the month of August?
- 
+# - Then take it up a step further, converting Hours into seconds (1 -> 3600)
+# - We're on the right track here, how many seconds are in a day
+# - How many Hours are in the month of June?
+# - How many Minutes are in the month of August?  
+
+
  
  # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
  # In days, in weeks, in cups of coffee?
@@ -19,6 +20,31 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def minutes_to_seconds(minutes):
+    return minutes * 60
+
+def hours_to_seconds(hours):
+    return hours * 3600
+
+def days_to_seconds(days):
+    return days * 24 * 3600
+
+def hours_in_june():
+    return 30 * 24
+
+def minutes_in_august():
+    return 31 * 24 * 60
+
+# Testing the functions
+print(minutes_to_seconds(1))  
+print(minutes_to_seconds(5))  
+print(hours_to_seconds(1)) 
+
+print(days_to_seconds(1))  
+
+print(hours_in_june())  
+print(minutes_in_august())  
 # ---------------------------------
 
 
@@ -31,6 +57,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def mid(str):
+    answer = str[int(len(str)/2)] if len(str)%2!=0 else ''
+    return answer
+print(mid('abc'))
+print(mid('ahbdhjabdj'))
+
 # ---------------------------------
 
 
@@ -40,6 +72,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hide(num):
+    newNum =  '*'*len(num[:-4]) + num[-4:]
+    return newNum
+print(hide('1234567890'))
+
 # ---------------------------------
 
 
@@ -50,12 +87,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -66,6 +103,10 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def onlineCount(dict):
+    return list(dict.values()).count('online')
+
+print(onlineCount(statuses))
 # ---------------------------------
 
 
@@ -76,8 +117,10 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def discount(num, dis):
+    return num*((100-dis)*.01)
 # ---------------------------------
-
+print(discount(200, 20))
 
 #  6) Pythagorean Theorum
 
@@ -87,8 +130,10 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def triangle(adj, opp):
+    return math.sqrt(adj**2 + opp**2)
 # ---------------------------------
-
+print(triangle(3,4))
 
 #  7) Fibonacci Sequence 
 # Everyone's favorite Math Problem!
@@ -100,4 +145,14 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fibonacci_intervals(num1, num2):
+    intervals = [num1, num2]
+    for _ in range(9):
+        next_interval = intervals[-1] + intervals[-2]
+        intervals.append(next_interval)
+    return intervals
+
+print(fibonacci_intervals(1, 4))
+
+
 # ---------------------------------
