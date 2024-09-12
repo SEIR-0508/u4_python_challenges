@@ -8,6 +8,7 @@
 # -  We're on the right track here, how many seconds are in a day
 # - How many Hours are in the month of June? 
 # - How many Minutes are in the month of August?
+
  
  
  # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
@@ -18,7 +19,21 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+#      Solution Goes Here -> 
+# def minutes_to_seconds(minutes):
+#     return minutes * 60
+
+# def hours_to_seconds(hours):
+#     return hours * 3600
+
+# seconds_per_day = hours_to_seconds(24)
+# print('Seconds per day:', seconds_per_day)
+
+# hours_in_june = 24 * 30
+# print(f'there are {hours_in_june} hours in June')
+
+# minutes_in_august = 31 * 24 * 60
+# print(f"there are {minutes_in_august} minutes in august")
 # ---------------------------------
 
 
@@ -31,6 +46,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+# def mid(string):
+#     length =len(string)
+#     if length % 2 == 0:
+#         return ""
+#     else:
+#         middle_index = length // 2
+#         return string[middle_index] 
 # ---------------------------------
 
 
@@ -40,6 +62,14 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+# def hide_cc(card_num):
+#     if len(card_num) < 15:
+#         return 'invalid card number'
+    
+#     hidden_cc = '*' * (len(card_num) - 4) + card_num[-4:]
+#     return hidden_cc
+
+# print(hide_cc('1234567890123456'))
 # ---------------------------------
 
 
@@ -66,6 +96,22 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# statuses = {
+#     "John": "online",
+#     "Paul": "offline",
+#     "George": "online",
+#     "Ringo": "offline"
+# }
+
+# def online_count(statuses):
+#     count = 0
+#     for status in statuses.values():
+#         if status == "online":
+#             count += 1
+#     return count
+
+# print(online_count(statuses))
 # ---------------------------------
 
 
@@ -76,6 +122,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+# def on_sale(full_price, discount_percentage):
+#     discount_amount = full_price * (discount_percentage / 100)
+#     sale_price = full_price - discount_amount
+#     return sale_price
+# print(on_sale(100, 20))
 # ---------------------------------
 
 
@@ -87,6 +138,7 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+#  
 # ---------------------------------
 
 
@@ -98,6 +150,14 @@
 # In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation between two adjacent steps in a list
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
-# ---------------------------------
-#      Solution Goes Here ->
+# # ---------------------------------
+# #      Solution Goes Here ->
+# def fibonacci(a, b):
+#     sequence = [a, b]
+#     for _ in range(9):
+#         next_number = sequence[-1] + sequence[-2]
+#         sequence.append(next_number)
+#     intervals = [sequence[i+1] - sequence[i] for i in range(len(sequence) - 1)]
+#     return intervals
+# print(fibonacci(0, 1))
 # ---------------------------------
