@@ -19,6 +19,48 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def minutes_to_seconds(minutes):
+#     return minutes * 60
+
+# minutes = 1
+# seconds = minutes_to_seconds(minutes)
+# print(f'{minutes} minutes is the same as {seconds} seconds.')
+
+# def hours_to_seconds(hours):
+#     return hours * 3600
+
+# hours = 1
+# seconds = hours_to_seconds(hours)
+# print(f'{hours} hour is the same as {seconds} seconds.')
+
+# def days_to_seconds(days):
+#     return days * 86400
+
+# days = 3
+# seconds = days_to_seconds(days)
+# print(f'{days} days is the same as {seconds} seconds.')
+
+# def hours_in_june(hours_in_day, days_in_month):
+#     return hours_in_day * days_in_month
+
+# days_in_month = 30
+# hours_in_day = 24
+# total_hours_in_june = hours_in_june(hours_in_day, days_in_month)
+# print(f'The month of June has {total_hours_in_june} hours.')
+
+# def minutes_in_august(minutes_in_hour, hours_in_day, days_in_month):
+#     return minutes_in_hour * hours_in_day * days_in_month
+
+# days_in_month = 31
+# hours_in_day = 24
+# minutes_in_hour = 60
+# total_hours_in_august = minutes_in_august(minutes_in_hour, hours_in_day, days_in_month)
+# print(f'The month of August has {total_hours_in_august} minutes.')
+
+
+
+
 # ---------------------------------
 
 
@@ -31,6 +73,18 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def mid(string):
+#     length = len(string)
+#     if length % 2 == 0:  
+#         return ""
+#     else:  
+#         middle_index = length // 2
+#         return string[middle_index]
+    
+# print(mid('abc'))
+# print(mid('aaaa'))
+
 # ---------------------------------
 
 
@@ -40,6 +94,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def cc_number(card_number):
+#     hidden_digits = "*" * (len(card_number) - 4)
+#     visible_digits = card_number[-4:]
+#     return hidden_digits + visible_digits
+
+# credit_card_number = "1234567894444"
+# hidden_card_number = cc_number(credit_card_number)
+# print(hidden_card_number)
 # ---------------------------------
 
 
@@ -66,6 +129,23 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def online_count(statuses):
+#     count = 0
+#     for status in statuses.values():
+#         if status == "online":
+#             count += 1
+#     return count
+
+# statuses = {
+#     "John": "online",
+#     "Paul": "offline",
+#     "George": "online",
+#     "Ringo": "offline"
+# }
+
+# count = online_count(statuses)
+# print(count)
 # ---------------------------------
 
 
@@ -76,6 +156,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def sale_price(full_price, discount):
+#     return full_price - (full_price * discount / 100)
+
+# full_price = 350
+# discount = 20
+# print(sale_price(full_price, discount))
 # ---------------------------------
 
 
@@ -87,6 +174,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def calc_hypotenous(adjacent, opposite):
+#     hypotenous = (adjacent**2 + opposite**2)**.5
+#     return hypotenous
+
+# adjacent = 3
+# opposite = 4
+# hypotenous = calc_hypotenous(adjacent, opposite)
+# print(hypotenous)
 # ---------------------------------
 
 
@@ -100,4 +196,17 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+# def fibonacci_intervals(num1, num2):
+#     fibonacci_sequence = [num1, num2]
+#     for _ in range(9):
+#         next_num = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+#         fibonacci_sequence.append(next_num)
+#     return fibonacci_sequence  
+
+
+# num1 = 0
+# num2 = 1
+# intervals = fibonacci_intervals(num1, num2)
+# print(intervals)
+
 # ---------------------------------
