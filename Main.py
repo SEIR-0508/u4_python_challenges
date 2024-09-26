@@ -19,6 +19,56 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math
+
+def minutes_to_seconds(minutes):
+    seconds = minutes * 60
+    return seconds
+  
+converted_seconds = minutes_to_seconds(1)
+print(converted_seconds) 
+  # ------------------------------
+  
+def hours_to_seconds(hours):
+    minutes = hours * 60
+    seconds = minutes_to_seconds(minutes)
+    return seconds
+  
+converted_seconds = hours_to_seconds(1)
+print(converted_seconds)
+  # ------------------------------
+
+def days_to_seconds(days):
+    hours = days * 24
+    seconds = hours * 3600
+    return seconds
+
+seconds_in_minute = 60
+minutes_in_hour = 60
+hours_in_day = 24
+
+seconds_in_day = seconds_in_minute * minutes_in_hour * hours_in_day
+
+print("Number of seconds in a day:", seconds_in_day)
+
+# ---------------------------------
+
+days_in_june = 30
+hours_in_day = 24
+
+total_hours_in_june = days_in_june * hours_in_day
+
+print(total_hours_in_june)
+
+# ---------------------------------
+
+days_in_august = 31
+hours_in_day = 24
+minutes_in_hour = 60
+
+total_minutes_in_august = days_in_august * hours_in_day * minutes_in_hour
+
+print(total_minutes_in_august)
 # ---------------------------------
 
 
@@ -31,6 +81,19 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(string):
+    length = len(string)
+    if length % 2 == 0:
+        return ""
+    else:
+        middle_index = length // 2
+        return string[middle_index]
+      
+print(mid("abc"))  
+print(mid("aaaa"))  
+
+     
 # ---------------------------------
 
 
@@ -40,6 +103,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def hide_credit_card_number(credit_card_number):
+  if len(credit_card_number) < 4:
+    return credit_card_number
+  hidden_chars = "*" * (len(credit_card_number) - 4)
+  last_four = credit_card_number[-4:]
+  return hidden_chars + last_four
+
+print(hide_credit_card_number("1234567894444"))
 # ---------------------------------
 
 
@@ -66,6 +138,22 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def online_count(dicts):
+    count = 0
+    for status in dicts.values():
+        if status == "online":
+            count += 1
+    return count
+
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(online_count(statuses))
 # ---------------------------------
 
 
@@ -76,6 +164,19 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discount_price(full_price, discount_percentage):
+    discount_amount = full_price * (discount_percentage / 100)
+    discounted_price = full_price - discount_amount
+    return discounted_price
+  
+full_price = 100
+discount_percentage = 20
+
+discounted_price = discount_price(full_price, discount_percentage)
+print(discounted_price) 
+
+
 # ---------------------------------
 
 
@@ -85,8 +186,20 @@
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
 
+
 # ---------------------------------
 #      Solution Goes Here ->
+
+def calculate_hypotenuse(adjacent, opposite):
+    hypotenuse = math.sqrt(adjacent**2 + opposite**2)
+    return hypotenuse
+  
+adjacent_leg = 3
+opposite_leg = 4
+
+hypotenuse = calculate_hypotenuse(adjacent_leg, opposite_leg)
+print(hypotenuse) 
+
 # ---------------------------------
 
 
@@ -100,4 +213,16 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonacci(num1, num2): 
+      numbers = [num1, num2]
+      for _ in range(10): 
+            next = numbers[-1] + numbers[-2]
+            numbers.append(next)
+      return numbers
+
+numbers = fibonacci(0, 1)
+print(numbers)
+
+
 # ---------------------------------
