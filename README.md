@@ -7,3 +7,5 @@ Perform all tasks by running the Main.py file in your terminal
 
 
 Find a cool picture of a snake and post it in here for bonus points
+
+![snake](https://i.redd.it/ci3t12fd8av81.jpg)
