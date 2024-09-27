@@ -19,6 +19,38 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+seconds_in_minute = 60
+minutes_in_hour = 60
+hour_in_day = 24
+days_in_june = 30 
+days_in_august = 31
+days_in_year = 365
+
+def minutes_to_seconds(minutes):
+    return f'{minutes * seconds_in_minute} seconds'
+
+def hours_to_seconds(hour):
+    return f'{hour * minutes_in_hour * seconds_in_minute} seconds'
+
+def days_to_seconds(day):
+    return f'{day * hour_in_day * minutes_in_hour * seconds_in_minute} seconds'
+
+def hours_in_june():
+    hours_in_day = 24
+    return f'{days_in_june * hours_in_day} hours'
+
+def mnutes_in_august():
+    minutes_in_hour = 60
+    return f'{days_in_august * minutes_in_hour} minutes'
+
+def minutes_in_year():
+    minutes_in_hour = 60
+    return f'{days_in_year * hour_in_day * minutes_in_hour} minutes'
+
+print(minutes_in_year())
+
+
 # ---------------------------------
 
 
@@ -30,7 +62,24 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+#      
+
+
+# import math
+
+def find_middle_letter(string):
+    string_as_list = list(string)
+    list_len = len(string_as_list)
+    if list_len % 2 == 0:
+        return ''
+    else:
+        return string_as_list[math.floor(list_len/2)]  
+
+print(find_middle_letter('Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch'))
+
+# the actual name of a town in Wales in the UK
+
+
 # ---------------------------------
 
 
@@ -40,6 +89,21 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# replace_charaxter = '*'
+
+def credit_card_hider(card_number):
+    integer_to_string = str(card_number)
+    num_chars_to_hide = len(integer_to_string) - 4
+    hidden_string = '*' * num_chars_to_hide
+    last_four_chars = integer_to_string[-4:]
+    result = hidden_string + last_four_chars
+    return result
+        
+
+card_number=1234567891234567   
+print(credit_card_hider(card_number))
+
 # ---------------------------------
 
 
@@ -50,12 +114,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -65,7 +129,17 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+#      
+
+def onlinne_count(statuses):
+    count = 0
+    for key, value in statuses.items():
+        if value == 'online':
+            count += 1
+    return count
+
+print(onlinne_count(statuses))
+
 # ---------------------------------
 
 
@@ -76,6 +150,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discounted_price(full_price, discount_percentage):
+    return full_price - (full_price * (discount_percentage/100))
+
+    
+print(discounted_price(150, 50))
+
 # ---------------------------------
 
 
@@ -87,6 +168,17 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+import math
+def hypotenuse(adjacent, opposite):
+    return math.sqrt(adjacent**2 + opposite**2)
+
+print(hypotenuse(3, 4))
+
+
+
+
+
 # ---------------------------------
 
 
@@ -100,4 +192,17 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fibonacci_intervals(num1, num2, num_intervals):
+    fibonacci_sequence = [num1, num2]
+    for i in range(2, num_intervals + 2):
+        next_num = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_num)
+    next_nine_intervals = fibonacci_sequence[2:]
+    return next_nine_intervals
+num1 = 0
+num2 = 1
+num_intervals = 9
+result = fibonacci_intervals(num1, num2, num_intervals)
+print(result)
+
 # ---------------------------------
